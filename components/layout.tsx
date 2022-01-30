@@ -3,11 +3,16 @@ import Image from 'next/image'
 import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
+import type { PropsWithChildren } from 'react'
 
 const name = 'Laurel Bean'
 export const siteTitle = 'Next.js Sample Website'
 
-export default function Layout({ children, home }) {
+type Props = {
+    home: boolean;
+}
+
+export default function Layout({ children, home }: PropsWithChildren<Props>) {
   return (
     <div className={styles.container}>
         <Head>
